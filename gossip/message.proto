@@ -156,6 +156,7 @@ message Properties {
     uint64 ledger_height = 1;
     bool left_channel = 2;
     repeated Chaincode chaincodes = 3;
+    uint64 archived_block_height
 }
 
 // StateInfoSnapshot is an aggregation of StateInfo messages
