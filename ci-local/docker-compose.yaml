@@ -1,0 +1,17 @@
+version: '2'
+
+volumes:
+  fabric-protos:
+
+services:
+
+  fabric-protos:
+    image: tittuvarghese/fabric-protos-baseos
+    working_dir: /tools
+    command: sh -c 'chmod u+x build.sh && chmod u+x compile_go_protos.sh && ls && ./build.sh'
+    volumes:
+      - ./build.sh:/tools/build.sh
+      - ./compile_go_protos.sh:/tools/compile_go_protos.sh
+      - ./fabric-protos-go:/tools/fabric-protos/build/fabric-protos-go
+      - fabric-protos:/tools
+    container_name: fabric_protos
