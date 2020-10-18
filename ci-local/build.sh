@@ -34,5 +34,5 @@ cd build/fabric-protos-go
 go mod tidy
 go build ./...
 
-# git add -A .
-# git diff --color --cached
+git add -A .
+git diff --color --cached
