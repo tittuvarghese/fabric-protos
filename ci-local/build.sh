@@ -37,5 +37,3 @@ go build ./...
 
 git add -A .
 git diff --color --cached
-ls
-pwd
