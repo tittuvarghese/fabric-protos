@@ -131,6 +131,10 @@ message GossipMessage {
         // Encapsulates private data used to distribute
         // private rwset after the endorsement
         PrivateDataMessage private_data = 25;
+
+        // Support for Tx based transfer from remote peer
+        RemoteTxRequest txRequest = 26;
+        RemoteTxResponse txResponse = 27;
     }
 }
 
@@ -371,4 +375,16 @@ message Chaincode {
     string name = 1;
     string version = 2;
     bytes metadata = 3;
+}
+
+// RemoteTxRequest - Tx based support to transfer transaction
+// from Remote Peer
+message RemoteTxRequest {
+    string tx_id = 1;
+}
+
+// RemoteTxResponse - Tx based support to transfer transaction
+// from Remote Peer
+message RemoteTxResponse {
+    Envelope envelope = 1;
 }
