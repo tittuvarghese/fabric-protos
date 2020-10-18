@@ -29,11 +29,10 @@ prototool lint
   git ls-files | grep -vFx -f <(grep -v '^#' < .whitelist) | tr '\n' '\0' | xargs -0 rm -f
   find ./* -type d -empty -delete
 )
-
-ci/compile_go_protos.sh
+ci-local/compile_go_protos.sh
 cd build/fabric-protos-go
 go mod tidy
 go build ./...
 
-git add -A .
-git diff --color --cached
+# git add -A .
+# git diff --color --cached
